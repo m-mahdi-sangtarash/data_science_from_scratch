@@ -1,27 +1,31 @@
-# import pandas as pd
-# import numpy as np
-#
-# dataset = pd.read_csv("users_dataset.csv")
-#
-# users_data = {}
-# for index, row in dataset.iterrows():
-#     user_friends_list = []
-#     user_friends = row['friends'].split(",")
-#     for user_friend in user_friends:
-#         user_friends_list.append(int(user_friend))
-#     user_data = {"id": index,
-#                  "name": row['user_name'],
-#                  "friends": user_friends_list}
-#     print(user_data)
+def friend_of_friend(user_id, users_friendship_dataset: list):
+    """
+    find friends of a friend.
+    :param user_id: friend_id
+    :param users_friendship_dataset: list of users friendship dataset
+    :return: list | a list of input user id friends
+    """
+    return [foaf_id for friend_id in users_friendship_dataset[user_id['id']] for foaf_id in users_friendship_dataset[friend_id]]
+
+
+def find_mutual_friends_total(user_id, friend_id, users_friendship_dataset: list):
+    """
+
+    :param user_id:
+    :param friend_id:
+    :param users_friendship_dataset:
+    :return:
+    """
 
 
 def find_best_suggestion(users_dataset: list, user_id: int):
     """
-
+    find the best suggestion for user.
     :param users_dataset:
     :param user_id:
     :return:
     """
+
 
 
 
